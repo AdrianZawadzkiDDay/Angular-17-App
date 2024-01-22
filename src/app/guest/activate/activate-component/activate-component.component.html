@@ -1,0 +1,8 @@
+<div class="center" *ngIf="activationMessage">
+  <h3 *ngIf="!errorMessage">
+    {{ activationMessage }}
+  </h3>
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+</div>

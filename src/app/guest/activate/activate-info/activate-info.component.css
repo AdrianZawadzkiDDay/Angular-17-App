@@ -1,0 +1,18 @@
+.solution {
+    color: rgb(239, 127, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Dodaj tę właściwość, aby uzyskać centrowanie pionowe */
+    margin: 0; /* Resetuj marginesy, aby uniknąć dodatkowego przesunięcia */
+  }
+  .solution2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .color_green {
+    color: rgb(24, 209, 24);
+  }
