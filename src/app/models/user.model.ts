@@ -2,6 +2,7 @@ import {Role} from "./role.enum";
 
 export class User {
   id: number |undefined;
+  username: string = "";
   email: string = "";
   password: string = "";
   name: string = "";
