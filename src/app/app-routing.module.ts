@@ -10,6 +10,7 @@ import {AuthGuard} from "./guards/auth.guard";
 import {Role} from "./models/role.enum";
 import { ActivateInfoComponent } from './guest/activate/activate-info/activate-info.component';
 import { ActivateAccountComponent } from './guest/activate/activate-component/activate-component.component';
+import {ProfileComponent} from "./personal/profile/profile.component";
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
    data: {roles: [Role.USER]}
   },
 
-  { path: 'admin', 
+  { path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
     data: {roles: [Role.ADMIN]}
@@ -39,7 +40,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
+export class AppRoutingModule {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationError) {

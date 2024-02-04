@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
 import { ActivateInfoComponent } from './guest/activate/activate-info/activate-info.component';
 import { ActivateAccountComponent } from './guest/activate/activate-component/activate-component.component';
+import {ProfileModule} from "./personal/profile.module";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ActivateAccountComponent } from './guest/activate/activate-component/ac
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]

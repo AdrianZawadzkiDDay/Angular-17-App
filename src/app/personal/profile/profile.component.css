@@ -1,0 +1,23 @@
+.main-container {
+  display: flex;
+  height: 100%;
+  /*overflow: hidden !important;*/
+}
+
+.menu-container {
+  width: 300px;
+  /*overflow: hidden;*/
+}
+
+.main-content-container {
+  background-color: #cecece;
+  width: 100%;
+  /*overflow: hidden;*/
+}
+
+.card {
+  height: 300px;
+  background-color: orange;
+  margin: 20px;
+  /*overflow: hidden;*/
+}
