@@ -1,0 +1,16 @@
+<div class="menu-tabs-container">
+  <div class="menu-element">
+    <fa-icon [icon]="dashboardIcon"></fa-icon>
+    <span class="menu-element-name">Profile</span>
+  </div>
+
+  <div class="menu-element" (click)="clickPersonalData()">
+    <fa-icon [icon]="personalDataIcon"></fa-icon>
+    <span class="menu-element">Personal Data</span>
+  </div>
+
+  <div class="menu-element" (click)="clickSecurity()">
+    <fa-icon [icon]="securityIcon"></fa-icon>
+    <span class="menu-element-name">Security</span>
+  </div>
+</div>

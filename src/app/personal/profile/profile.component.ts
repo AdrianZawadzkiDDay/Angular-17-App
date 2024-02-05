@@ -4,6 +4,7 @@ import { User } from 'src/app/models/user.model';
 // import {SecurityComponent} from "../security/security.component";
 // import {NewTenderComponent} from "../new-tender/new-tender.component";
 import {CommonModule} from "@angular/common";
+import EventTypes from "../event-types";
 // import EventTypes from "../event-types";
 
 @Component({
@@ -14,7 +15,7 @@ import {CommonModule} from "@angular/common";
 export class ProfileComponent {
   currentUser: User = new User;
   isSecurityVisible: boolean = false;
-  isNewTenderVisible: boolean = false;
+  isPersonalDataVisible: boolean = false;
 
   constructor() {
     const storageUserAsStr = localStorage.getItem('currentUser');
@@ -25,9 +26,9 @@ export class ProfileComponent {
   }
 
   handleData(data: string) {
-    // this.isSecurityVisible = data === EventTypes.SECURITY;
-    // this.isNewTenderVisible = data === EventTypes.NEW_TENDER
+    console.log("asdfg0", data)
+    this.isSecurityVisible = data === EventTypes.SECURITY;
+    this.isPersonalDataVisible = data === EventTypes.PERSONAL_DATA
   }
-
 
 }
