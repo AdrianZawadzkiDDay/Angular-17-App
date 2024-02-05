@@ -15,9 +15,9 @@ export class SecurityComponent implements OnDestroy {
   isLoading: boolean = false;
 
   changePassword: FormGroup = new FormGroup({
-      password: new FormControl('', [Validators.required, Validators.minLength(3), this.containsLetterA]),
-      newPassword: new FormControl('', [Validators.required, Validators.min(3), this.checkPasswordStrength]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.min(3), this.checkPasswordStrength])
+      password: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      newPassword: new FormControl('', [Validators.required, this.checkPasswordStrength]),
+      confirmPassword: new FormControl('', [Validators.required, this.checkPasswordStrength])
     },
     {
       validators: this.matchPasswords
