@@ -15,6 +15,8 @@ import {FormsModule} from "@angular/forms";
 import { ActivateInfoComponent } from './guest/activate/activate-info/activate-info.component';
 import { ActivateAccountComponent } from './guest/activate/activate-component/activate-component.component';
 import {ProfileModule} from "./personal/profile.module";
+import {ToastrModule} from "ngx-toastr";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -35,7 +37,11 @@ import {ProfileModule} from "./personal/profile.module";
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ProfileModule
+    ProfileModule,
+    ToastrModule.forRoot({
+
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

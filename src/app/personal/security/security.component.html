@@ -1,0 +1,43 @@
+<div class="center">
+  <h3 >CHANGE PASSWORD</h3>
+  <form class="center" [formGroup]="changePassword">
+    <mat-form-field>
+      <mat-label>Enter your old password</mat-label>
+      <input matInput placeholder="Old Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      @if (passwordInput?.invalid) {
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      }
+      <mat-error>{{getErrorMessage()}}</mat-error>
+      <mat-hint *ngIf="!passwordInput?.value">Enter your old password</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field [ngClass]="{'normal-margin': !newPasswordInput?.invalid && (!newPasswordInput?.value || newPasswordInput?.value.length < 6), 'error-margin': newPasswordInput?.invalid && newPasswordInput?.value && newPasswordInput?.value.length >= 6}">
+      <mat-label>Enter new password</mat-label>
+      <input matInput placeholder="New Password" [type]="hideNewPassword ? 'password' : 'text'" formControlName="newPassword" required>
+      <mat-icon matSuffix (click)="hideNewPassword = !hideNewPassword">{{hideNewPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      @if (newPasswordInput?.invalid) {
+        <mat-error>{{getErrorMessageNewPassword()}}</mat-error>
+      }
+      <mat-hint *ngIf="!newPasswordInput?.value">Enter your new password</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field [ngClass]="{'normal-margin': !confirmPasswordInput?.invalid && (!confirmPasswordInput?.value || confirmPasswordInput?.value.length < 6), 'error-margin': confirmPasswordInput?.invalid && confirmPasswordInput?.value && confirmPasswordInput?.value.length >= 6}">
+      <mat-label>Repeat new password</mat-label>
+      <input matInput placeholder="Confirm New Password" [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword" required>
+      <mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      @if (confirmPasswordInput?.invalid) {
+        <mat-error style="margin-bottom: 100px">{{getErrorMessageConfirmNewPassword()}}</mat-error>
+      }
+      <mat-hint *ngIf="!confirmPasswordInput?.value">Repeat your new password</mat-hint>
+    </mat-form-field>
+    @if (changePassword?.errors?.['passwordMismatch']) {
+      <mat-error>{{'Passwords must match'}}</mat-error>
+    }
+  </form>
+
+    <button  *ngIf="!isLoading" [disabled]="check()" (click)="handleSubmit()" mat-raised-button color="primary">Change Password</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+
+
