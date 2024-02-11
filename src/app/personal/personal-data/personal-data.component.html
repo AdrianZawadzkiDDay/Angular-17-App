@@ -1,1 +1,11 @@
-<p>personal-data works!</p>
+<div class="left-top">
+  <p class="custom-text" *ngIf="currentUser && currentUser.username">
+    <span style="font-weight: bold">Username:</span> {{ currentUser.username }}
+  </p>
+  <p class="custom-text" *ngIf="currentUser && currentUser.email">
+    <span style="font-weight: bold">Email:</span> {{ currentUser.email }}
+  </p>
+  <p class="custom-text" *ngIf="currentUser && currentUser.role">
+    <span style="font-weight: bold">Role:</span> {{ currentUser.role }}
+  </p>
+</div>

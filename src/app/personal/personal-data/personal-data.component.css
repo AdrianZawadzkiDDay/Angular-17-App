@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom-text {
+    font-size: 20px;
+}
+
+.left-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+}

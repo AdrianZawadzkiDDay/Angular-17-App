@@ -24,7 +24,7 @@ export class SecurityComponent implements OnDestroy {
     }
   );
 
-  constructor(private  toastr: ToastrService, private changePasswordService: ChangePasswordService) {
+  constructor(private toastr: ToastrService, private changePasswordService: ChangePasswordService) {
   }
 
   ngOnDestroy(): void {

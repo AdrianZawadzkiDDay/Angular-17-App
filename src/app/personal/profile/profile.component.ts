@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/models/user.model';
-// import { SideMenuComponent } from '../side-menu/side-menu.component';
-// import {SecurityComponent} from "../security/security.component";
-// import {NewTenderComponent} from "../new-tender/new-tender.component";
-import {CommonModule} from "@angular/common";
 import EventTypes from "../event-types";
-// import EventTypes from "../event-types";
 
 @Component({
   selector: 'app-profile',
@@ -26,7 +21,6 @@ export class ProfileComponent {
   }
 
   handleData(data: string) {
-    console.log("asdfg0", data)
     this.isSecurityVisible = data === EventTypes.SECURITY;
     this.isPersonalDataVisible = data === EventTypes.PERSONAL_DATA
   }
